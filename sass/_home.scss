@@ -1,0 +1,309 @@
+.home #page {
+	#main {
+		max-width: none;
+	}
+	.site-header .header-wrap {
+		max-width: 1080px;
+	}
+	.entry-header {
+		display: none;
+	}
+	.entry-content {
+		section.border {
+			img {
+				position: relative;
+				float: left;
+			}
+			div {
+				padding-left: 170px;
+			}
+		}
+	}
+
+	#page #main {
+		max-width: none;
+	}
+
+	.site-main .widget-area {
+		float: none;
+		width: auto;
+		padding-top: 25px;
+		margin-right: 0 !important;
+		> ul {
+			@include clearfix;
+			max-width: 1040px;
+			margin: 0 auto;
+			padding: 0;
+		}
+		h2.widgettitle {
+			font-family: 'Novecento Normal';
+			font-style: normal;
+			font-size: 22px;
+			margin-top: 0;
+			margin-bottom: 12px;
+		}
+
+		.textwidget, p {
+			font-size: 17px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.widget.widget_homeitem {
+			a.thumb {
+				display: block;
+				img {	
+					border: solid 1px transparent;
+				}
+				&:hover img {
+					border: solid 1px #d6cfc7;
+					@include opacity(0.5);
+				}
+				margin-bottom: 10px;	
+			}
+			.more-info {
+				margin-top: 0;
+				display: none;
+			}
+		}
+
+		.widget.widget_text {
+			li {
+				color: #888;
+				padding-left: 20px;
+				//text-indent: -20px;
+			}
+			li:before {
+				font-family: FontAwesome;
+				content: "\f105";
+				width: 20px;
+				margin-left: -20px;
+				display: inline-block;
+			}
+		}
+
+		/* Events Widget on Homepage */
+		.widget.widget_em_widget {
+			position: relative;
+			margin-bottom: 0;
+			h2 {
+				font-size: 22px;
+				 font-family: "Novecento DemiBold";
+				
+				/*a:before {
+					font-family: "Novecento Normal";
+					content: "Events with ";
+				}*/
+			}
+			ul {
+				@include clearfix;
+				min-height: 320px;
+			}
+			li {
+				margin-bottom: 20px;
+				float: left;
+				width: 330px;
+				height: 305px;
+				a img {
+					border: solid 1px transparent;
+					&:hover {
+						@include opacity(0.5);
+						border: solid 1px #d6cfc7;
+					}
+				}
+				.thumbnail {
+					position: relative;
+				}
+				.location {
+					display: none;
+				}
+				.event-info {
+					width: 280px;
+					margin-top: 10px;
+					h5, p {
+						margin: 0;
+					}
+					h5 {
+						margin-bottom: 0;
+						font-size: 22px;
+						font-weight: normal;
+					}
+					p {
+						color: #666;
+						margin-bottom: 0;
+						/*em {
+							color: #4e7fc2;
+						}*/
+						//&.dates {
+							font-size: 18px;
+							color: #14141A;
+							font-size: 18px;
+							line-height: 24px;
+							margin-top: 5px;
+						//}
+						strong {
+							font-weight: 600;
+						}
+						em {
+							clear: both;
+							display: block;
+						}
+					}
+				}
+			}
+
+			.all-events-link {
+				margin: 0;
+				bottom: 0;
+				width: auto;
+				height: auto;
+				clear: both;
+				a {
+					@include more-info;
+					font-family: 'Novecento Normal';
+					strong {
+						font-family: 'Novecento DemiBold';
+					}
+					&:hover {
+						color: #0047a5;
+					}
+				}
+			}
+		}
+		/*#em_widget-7 {
+			ul {
+				height: 0;
+				min-height: 0;
+			}
+			li {
+				display: none;
+			}
+			.all-events-link {
+				top: -20px;
+				display: block;
+			}
+		}*/
+		&.home-top {
+		}
+
+		&.home-middle {
+			background-color: #eef4fe;
+			padding-bottom: 25px;
+		}
+
+		&.home-bottom, &.home-top {
+			> ul > li {
+				float: left;
+				width: 330px;
+			}
+			h3 {
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 640px) and (max-width: 1069px) {
+	.home #page .site-main .widget-area {
+		&.home-bottom, &.home-top {
+			padding: 0 40px;
+			margin-top: 20px;
+			> ul > li {
+				float: none;
+				clear: both;
+				width: auto;
+				padding-top: 30px;
+				@include clearfix;
+				margin-bottom: 20px;
+				&.widget_homeitem {
+					.widgettitle {
+						position: absolute;
+						margin-left: 330px;
+						margin-top: -30px;
+					}
+					img {
+						margin-top: -30px;
+						float: left;
+						margin-right: 30px;
+					}
+				}
+			}
+		}
+		&.home-middle {
+			padding: 0 40px; // 0 40px;
+			.widget.widget_em_widget {
+				li {
+					width: auto;
+					float: none;
+					@include clearfix;
+					height: auto;
+					margin-bottom: 30px;
+					&.all-events-link {
+						margin-bottom: 0;
+					}
+					.thumbnail {
+						float: left;
+						margin-right: 30px;
+					}
+					.event-info {
+						float: left;
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 640px) {
+	.home .entry-content section.border {
+		img {
+			float: none;
+		}
+		div {
+			padding-left: 0;
+		}
+	}
+
+	.home #page .site-main .widget-area {
+		&.home-bottom, &.home-top {
+			> ul > li {
+				&.widget_homeitem, &.widget_text {
+					float: none;
+					margin-left: auto;
+					margin-right: auto;
+					p {
+						margin-bottom: 0;
+					}
+				}
+				&.widget_text {
+					width: auto;
+				}
+			}
+		}
+		&.home-middle .widget.widget_em_widget {
+			h2 {
+				//text-align: center;
+				width: 300px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			li {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				width: 300px;
+				&.all-events-link {
+					width: 300px;
+					margin-left: auto;
+					margin-right: auto;
+					display: block;
+					//text-align: center;
+				}
+			}
+		}
+	}
+}
